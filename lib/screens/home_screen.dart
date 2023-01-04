@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sqflite_practice/database/database_handler.dart';
 import 'package:sqflite_practice/model/notes_model.dart';
+import 'package:sqflite_practice/screens/add_notes/add_notes.dart';
 import 'package:sqflite_practice/widget/text_widget.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -27,6 +28,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    notesList = dbHelper!.getNotesList();
+    print('build called');
     return Scaffold(
       appBar: AppBar(
         title: TextWidget(titile: 'Notes'),
@@ -81,20 +84,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          dbHelper!
-              .insert(
-            NotesModel(age: 21, email: "Shahab57@gmail.com", description: "descripition", title: "first titile"),
-          )
-              .then((value) {
-            print('data added ');
-            setState(() {
-
-            });
-            notesList = dbHelper!.getNotesList();
-          }).onError((error, stackTrace) {
-            print(stackTrace);
-            print(error.toString());
-          });
+          Navigator.push(context, MaterialPageRoute(builder: (context) => AddNotes()));
         },
         child: const Icon(Icons.add),
       ),
