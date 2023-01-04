@@ -10,6 +10,8 @@ class AddNotes extends StatelessWidget {
   AddNotes({Key? key}) : super(key: key);
 
   DBHelper? dbHelper = DBHelper();
+  TextEditingController notesTitle = TextEditingController();
+  TextEditingController notesDescripition = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -35,12 +37,14 @@ class AddNotes extends StatelessWidget {
             ),
             TextFieldWidget(
               hintText: 'Notes Title',
+              controller: notesTitle,
             ),
             const SizedBox(
               height: 6.0,
             ),
             TextFieldWidget(
               hintText: 'Notes Description',
+              controller: notesDescripition,
             ),
             const SizedBox(
               height: 10.0,
@@ -54,6 +58,8 @@ class AddNotes extends StatelessWidget {
               elevation: 14.0,
               textSize: 22.0,
               pressed: () {
+                print(notesTitle.text.toString());
+                print(notesDescripition.text);
                 dbHelper!
                     .insert(
                   NotesModel(age: 21, email: "Shahab57@gmail.com", description: "descripition", title: "first titile"),

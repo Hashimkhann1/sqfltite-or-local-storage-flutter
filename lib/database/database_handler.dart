@@ -29,7 +29,7 @@ class DBHelper {
   
   _onCreate(Database db , int version) async {
     // db.execute("CREATE TABLE notes (id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT NOT NULL, age INTEGER NOT NULL, description TEXT NOT NULL,email TEXT)",);
-    await db.execute( "CREATE TABLE notes(id INTEGER PRIMARY KEY AUTOINCREMENT,title TEXT NOT NULL,age INTEGER NOT NULL,description TEXT NOT NULL, email TEXT)",
+    await db.execute( "CREATE TABLE notes(id INTEGER PRIMARY KEY AUTOINCREMENT,title TEXT NOT NULL,date TEXT,description TEXT NOT NULL, email TEXT)",
     );
   }
 

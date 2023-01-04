@@ -70,7 +70,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           contentPadding: EdgeInsets.symmetric(horizontal: 4.0),
                           title: TextWidget(titile: snapshot.data?[index].title,),
                           subtitle: TextWidget(titile: snapshot.data?[index].description,),
-                          trailing: TextWidget(titile: snapshot.data?[index].age.toString(),),
+                          // trailing: TextWidget(titile: snapshot.data?[index].age.toString(),),
                         ),
                       ),
                     );

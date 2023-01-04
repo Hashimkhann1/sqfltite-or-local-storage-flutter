@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 class TextFieldWidget extends StatelessWidget {
   TextFieldWidget({
     Key? key,
-    this.hintText
+    this.hintText,
+    this.controller
   }) : super(key: key);
 
   TextEditingController? controller;
