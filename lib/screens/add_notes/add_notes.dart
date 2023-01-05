@@ -62,7 +62,7 @@ class AddNotes extends StatelessWidget {
                 print(notesDescripition.text);
                 dbHelper!
                     .insert(
-                  NotesModel(age: 21, email: "Shahab57@gmail.com", description: "descripition", title: "first titile"),
+                  NotesModel(age: 21, email: "Hashimkhan@gmail.com", description: "${notesDescripition.text}", title: "${notesTitle.text}"),
                 )
                     .then((value) {
                   print('data added ');
